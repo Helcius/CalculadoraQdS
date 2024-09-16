@@ -1,7 +1,8 @@
 # CalculadoraQdS
 Projeto para exercitar a elaboração de testes unitários, da disciplina Qualidade de Software
 
-Alunos: 
+Alunos:
+
 Beatriz Falcão de Lima;
 
 Bruna Oliveira Bezerra Magalhães de Souza;
