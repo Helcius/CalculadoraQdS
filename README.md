@@ -10,4 +10,4 @@ Helcius Araújo Nóbrega Cabral;
 
 Ingrid Helena Freitas Pordeus de Souza;
 
-Paula Mota Gomes
+Paula Mota Gomes.
