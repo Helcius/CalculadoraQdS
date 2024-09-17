@@ -37,20 +37,32 @@ public class CalculadoraTest {
         // Testes de exponenciação para base negativa.
 
     @Test
-    public void testExponencialComBaseNegativaEExpoentePar() {
+    public void testBaseNegativaEExpoentePar() {
         assertEquals(16.0, calculadora.exponencial(-2, 4), 0.0001);
     }
 
     @Test
-    public void testExponencialComBaseNegativaEExpoenteImpar() {
+    public void testBaseNegativaEExpoenteImpar() {
         assertEquals(-8.0, calculadora.exponencial(-2, 3), 0.0001);
     }
 
     @Test
-    public void testExponencialComBaseNegativaEExpoenteFracionario() {
+    public void testBaseNegativaEExpoenteFracionario() {
         ArithmeticException exception = assertThrows(ArithmeticException.class, () -> {
             calculadora.exponencial(-2, 0.5);
         });
         assertEquals("Expoente fracionário com base negativa não é permitido.", exception.getMessage());
+    }
+
+        // Testes de exponenciação com base zero.
+
+    @Test
+    public void testBaseZeroEExpoentePositivo() {
+        assertEquals(0.0, calculadora.exponencial(0, 5), 0.0001);
+        }
+
+    @Test
+    public void testBaseZeroEExpoenteZero() {
+        assertEquals(1.0, calculadora.exponencial(0, 0), 0.0001);
     }
 }
