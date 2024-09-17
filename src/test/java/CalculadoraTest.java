@@ -9,13 +9,13 @@ public class CalculadoraTest {
     public Calculadora calculadora = new Calculadora();
 
     @Test
-    public void divisaoValidaTest(){
+    public void testDivisaoValida(){
         double resultado = calculadora.divisao(10, 2);
         assertEquals(5.00, resultado);
 
     }
     @Test
-    public void divisaoPorZeroTest(){
+    public void testDivisaoPorZero(){
         ArithmeticException excecao = assertThrows(ArithmeticException.class, () -> calculadora.divisao(10, 0));
         assertEquals("Divisão por zero não é permitida.",excecao.getMessage());
     }
@@ -65,4 +65,42 @@ public class CalculadoraTest {
     public void testBaseZeroEExpoenteZero() {
         assertEquals(1.0, calculadora.exponencial(0, 0), 0.0001);
     }
+
+    @Test
+    public void testSoma(){
+        double resultado = calculadora.soma(10, 2);
+        assertEquals(12, resultado);
+
+    }
+    @Test
+    public void testSubtracao(){
+        double resultado = calculadora.subtracao(10, 2);
+        assertEquals(8, resultado);
+
+    }
+    @Test
+    public void testMultiplicacao(){
+        double resultado = calculadora.multiplicacao(10, 2);
+        assertEquals(20, resultado);
+
+    }
+
+    @Test
+    public void testFatorialPositivo() {
+        long resultado = calculadora.fatorial(5);
+        assertEquals(120, resultado);
+    }
+
+    @Test
+    public void testFatorialZero() {
+        long resultado = calculadora.fatorial(0);
+        assertEquals(1, resultado);
+    }
+
+    @Test
+    public void testFatorialNegativo(){
+        IllegalArgumentException excecao = assertThrows(IllegalArgumentException.class, () -> calculadora.fatorial(-2));
+        assertEquals("Fatorial não é definido para números negativos.",excecao.getMessage());
+    }
+
 }
